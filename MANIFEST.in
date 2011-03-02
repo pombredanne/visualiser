@@ -1,0 +1,11 @@
+include README
+include LICENSE
+
+recursive-include bin/ *
+recursive-include tests/ *
+recursive-include backend/ *
+
+recursive-include visualizer/ *
+
+recursive-exclude research/ *
+

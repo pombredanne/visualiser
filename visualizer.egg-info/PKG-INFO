@@ -1,0 +1,32 @@
+Metadata-Version: 1.0
+Name: visualizer
+Version: 0.1a1
+Summary: visualizer is used to visualize software quality for projects
+Home-page: http://bitbucket.org/markfink/metrics/
+Author: Mark Fink
+Author-email: mark@mark-fink.de
+License: GNU LESSER GENERAL PUBLIC LICENSE, Version 3
+Download-URL: http://pypi.python.org/pypi/metrics
+Description: visualizer is a set of tools for visualizing software quality. I have been working exclusively on testing software for over five years now. During this time I was constantly reimplementing tools for visualizing test results like for example logfile parsing. I was using different open source packages for visualization because my taste for software libraries was evolving over time.
+        
+        During the 2009 I wanted to evolve the visualization tool-set again and I evaluated some tools like Matplotlib, R, Processing, John Resig's Processing.js, and TheJit. I read some books about Statistics and Graphics. At one stage I found myself rethinking my approach to visualization altogether. Meanwhile I read through a bunch of books and hundreds of papers, PhD thesis, and websites on information visualization. In January 2010 I went to Dallas for a tutorial on 'Presenting data and information' by Professor Edward Tufte. With his inspiration I was be able to work out a more effective approach to visualization of software quality. At about that time I started working on the visualizer project.
+        
+        I presented the visualizer prototype at the EuroPython 2010 conference and I am working since then on further improvements. I am looking forward to release a first version soon.
+        
+        Currently I try to provide support on a best effort basis. You should address the discussion forum in case you have questions, bug reports, feature requests, etc.:
+        http://groups.google.com/group/testing-software-org
+        
+        For more information on the visualizer toolkit or The Hitchhikers Guide to Test Automation please visit: 
+        http://www.testing-software.org/
+        
+        
+Platform: any
+Classifier: License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Testing
+Classifier: Natural Language :: English

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="./jquery/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css"/>
+  <script src="./jquery/jquery-1.4.2.min.js"></script>
+  <script src="./jquery/jquery-ui-1.8.5.custom.min.js"></script>
+  
+  <link href="./jquery/jquery.ui.tooltip.css" rel="stylesheet" type="text/css"/>
+  <script src="./jquery/jquery.ui.tooltip.js"></script>
+
+  <script>
+  $(document).ready(function() {
+        // works:
+        //$( "[title]" ).tooltip({ content: function() {
+        //    var now = new Date();
+        //    return now.getTime();
+        //} });        
+
+        var resp = '';
+        $( "[title]" ).tooltip({ content: function() {
+            $.ajax({
+                url: "./tooltip/599/1?callback=?",
+                dataType: "json",
+                contentType: "application/json",
+                async: "true",
+                success: function(data) {
+                    resp = html(data['name']);
+                }
+                });
+            return resp;
+        } });        
+        
+  });
+
+  </script>
+</head>
+<body style="font-size:62.5%;">
+<img src="./treemap/firefox/42096?width=600&hight=400" title="Anchor description" />
+
+</body>
+</html>
+
