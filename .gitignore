@@ -1,6 +1,27 @@
 # Folders
 research/
 built/
+build/
+artwork/
+bak/
+env/
+boodo.egg-info/
+*.egg-info/
+demo/
+demo2/
+_os/
+_plots/
+_jmeter/
+testruns/
 
-# Single Files
-
+*.pyc
+*.class
+*.egg
+*.*~
+*~
+.coverage
+*.nja
+*.bak
+adams_*.txt
+plot_error.log
+*.tar.gz
