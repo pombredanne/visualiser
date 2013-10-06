@@ -1,0 +1,88 @@
+.nytg-search{
+    position: relative;
+    height: 40px;
+    z-index: 100002;
+}
+
+.nytg-search-focus .nytg-searchInputWrapper{
+    border: solid 1px #004276;
+}
+
+.nytg-search-focus input.nytg-searchBox {
+/*    font-weight: bold;*/
+    color: black;
+}
+
+.nytg-search-focus .nyt-searchResults{
+/*    display: block !important;
+*/}
+
+.nytg-searchInputWrapper {
+    display: block;
+    padding: 0px 8px;
+    border: solid 1px #AAA;
+}
+
+.nytg-searchAmount {
+    display: block;
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    text-align: right;
+    width: 100px;
+}
+
+.nytg-searchDescription {
+    display: block;
+    width: 375px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nytg-searchResults {
+    display: block;
+    border: solid 1px #BBB;
+    background-color: white;
+    -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.7);
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.7);
+    position: absolute;
+    width: 450px;
+    right: 0px;
+    z-index: 100003;
+    padding: 6px 0;
+}
+
+input.nytg-searchBox {
+    -webkit-appearance: textfield;
+    border: none;
+    outline: none;
+    width: 98%;
+    font-size: 13px;
+/*    padding: 0 8px;*/
+    height: 23px;
+    color: #999;
+    
+}
+
+.nytg-resultsList a {
+    display: block;
+/*    width: 100%;*/
+/*    border-top: solid 1px #DEDEDE;*/
+    padding: 6px 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+}
+
+.nytg-resultsList a:hover {
+    text-decoration: none;
+    background-color: #F0F4F5;
+}
+
+.nytg-searchResults .nytg-resultsSummary {
+    padding: 8px;
+    color: #999;
+}

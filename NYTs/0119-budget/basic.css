@@ -1,0 +1,259 @@
+	
+/*	util*/
+.clearfix:after {
+    clear:both;
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+}
+
+.clearfix {
+    display:block;
+}
+
+
+/*MAP CONTROLS*/
+
+#nytg-mapControls a{
+    float: left;
+    display: block;
+    background-color: #275b8a;
+    color: #FFF;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 7px 10px 6px 27px;
+    font-size: 9px;
+    text-transform: uppercase;
+    margin: 0 6px 0 0;
+    opacity: 0.9;
+}
+
+.nytg-fullScreenButton {
+/*  -webkit-transition: opacity 0.1s linear;*/
+/*  -moz-transition: opacity 0.1s linear;*/
+/*  transition: opacity 0.1s linear;*/
+/*  opacity: 0.8;
+  font-size: 10px;
+  padding: 5px 8px 4px 27px;
+  float: right;
+  text-transform: uppercase;
+  background: #275b8a url(http://graphics8.nytimes.com/packages/images/newsgraphics/lib/20100609/icons/fullscreen_icon_white.png) no-repeat 6px center;
+  color: white;
+  margin: 0 0 6px;*/
+}
+#nytg-mapControls a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.nytg-fullScreenButton {
+    background: url(http://graphics8.nytimes.com/packages/images/newsgraphics/lib/20100609/icons/fullscreen_icon_white.png) no-repeat 6px center;
+}
+
+#nytg-zoomIn {
+    background: url(http://graphics8.nytimes.com/packages/images/newsgraphics/lib/20100609/icons/zoom-in-white.png) no-repeat 4px center;
+}
+
+#nytg-zoomOut {
+    background: url(http://graphics8.nytimes.com/packages/images/newsgraphics/lib/20100609/icons/zoom-out-white.png) no-repeat 4px center;
+}
+
+#nytg-searchBox {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    z-index: 1000;
+}
+
+	
+	
+	
+/*ZOOMING*/
+
+
+.nytg-zoomFrame {
+    border: solid #CCC 1px;
+/*    -webkit-box-shadow: #333 1px 1px 10px inset;*/
+    background-color: #CCC;
+    z-index: 1;
+}
+.nytg-dragContainer {
+    background-color: #FFF;
+}
+
+.nytg-zoomOverlay {
+/*    display: none;*/
+    width: 100%;
+    height: 100%;
+/*    -webkit-box-shadow: #333 1px 1px 30px inset;*/
+    z-index: 2;
+    position: absolute;
+}
+
+.nytg-zoomOverlay img {
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    -webkit-user-select: none;*/
+/*    -khtml-user-select: none;*/
+/*    -moz-user-select: none;*/
+/*    -o-user-select: none;*/
+/*    user-select: none;*/
+}
+
+#nytg-zoomFrame span.drag div{
+    /*TODO this slows down the dragging*/
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.nytg-zoomAnimate {
+    -webkit-transition-property: top, left, width, height;
+    -webkit-transition-duration: 0.8s;
+    
+    -moz-transition-property: top, left, width, height;
+    -moz-transition-duration: 0.8s;
+    
+    -o-transition-property: top, left, width, height;
+    -o-transition-duration: 0.8s;
+    
+    transition-property: top, left, width, height;
+    transition-duration: 0.8s;
+}
+
+.nytg-notSelectable{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+/*#nytg-mapContainer::selection{ background:transparent;}*/
+
+div{ -webkit-user-select:none;}
+
+#nytg-colorKey {
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#nytg-colorKey p {
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 8px;
+}
+
+#nytg-colorKey li{
+    float: left;
+    display: block;
+    height: 100%;
+}
+
+.nytg-colorSwatches{
+    width: 100%;
+    height: 10px;
+}
+
+.nytg-colorSwatches li {
+    width: 16%;
+    border-right: solid white 1px;
+}
+
+.nytg-colorTicks {
+    height: 6px;
+}
+.nytg-colorTicks li {
+    width: 16%;
+    border-right: solid #CCC 1px;
+}
+
+.nytg-colorLabels {
+    margin-top: 3px;
+    height: 20px;
+    position: relative;
+    left: 8%;
+}
+
+.nytg-colorLabels li {
+    
+    width: 16%;
+    border-right: solid white 1px;
+    text-align: center;
+}
+
+
+/*<div id="nytg-colorKey">
+<ul class="nytg-colorSwatches">
+<li class="change-decrease3"></li>
+<li class="change-decrease2"></li>
+<li class="change-decrease1"></li>
+<li class="change-increase1"></li>
+<li class="change-increase2"></li>
+<li class="change-increase3"></li>
+</ul>
+<ul class="nytg-colorTicks">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<ul class="nytg-colorLabels">
+<li>-15%</li>
+<li>-10%</li>
+<li>0</li>
+<li>+10%</li>
+<li>+15%</li>
+</ul>
+</div>*/
+
+
+
+
+
+
+
+
+/*HIGHLIGHTS*/
+#nytg-controlPane {
+}
+
+
+#nytg-controlPane a {
+/*    text-decoration: underline;*/
+}
+
+#nytg-controlPane li:hover {
+/*    background-color: #f0f4f5;*/
+}
+
+#nytg-annotationLinks {
+   margin: 0px 12px 12px 0;
+}
+
+.nytg-annotationLink {
+    margin-left: 4px;
+    padding-left: 16px;
+    background-image: url(http://graphics8.nytimes.com/packages/images/newsgraphics/lib/20100609/icons/zoom.gif);
+    background-position: left center;
+    background-repeat: no-repeat;
+    }
+
+#nytg-annotationLinks li.nytg-annotationSection{
+   border-top: solid 1px #DDD;
+   padding: 8px 0;
+   line-height: 17px;
+   font-size: 12px;
+}
+#nytg-annotationLinks li.first {
+    border-top: none;
+    padding-top: 12px;
+}

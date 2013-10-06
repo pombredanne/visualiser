@@ -1,0 +1,370 @@
+/*-- -- -- -- -- -- --
+  Undo browser defaults
+  http://tantek.com/log/2004/09.html#d06t2354
+-- -- -- -- -- -- --*/
+:link,:visited {text-decoration: none;}
+ul, ol {list-style: none;}
+h1, h2, h3, h4, h5, h6, pre, code, p {font-size: 1em;}
+ul, ol, dl,li, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input {margin: 0; padding: 0;}
+a img,:link img,:visited img {border: none;}
+address {font-style: normal;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+body{
+  margin:0; padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:10px;
+}
+body,html{
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}
+
+/* ---------------------------------------------------- end basic */
+a{
+  color:#004276;
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
+
+/*BASIC STRUCTURE*/
+
+#nytg-wrapper {
+    position:absolute;
+    top:0px;
+    left:0;
+    right:0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+
+#nytg-fluidTopShelf {
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+/*  padding: 0 0 8px;*/
+  padding: 12px 12px 0 12px;
+/*border-bottom: solid 2px #000;*/
+  z-index: 100;
+  background: #FFF;
+  
+}
+
+#nytg-fluidHeader{
+  position:absolute;
+  top:54px;
+  left:12px;
+  right:12px;
+  height:115px;
+  background:#fff;
+/*  padding: 12px 12px 0 12px;*/
+  -webkit-transition: top 0.3s ease-in-out;
+  -moz-transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
+}
+#nytg-fluidBody{
+/*  padding: 0 12px;
+*/  position:absolute;
+  top:118px;
+  left:12px;
+  right:12px;
+  bottom:46px;
+  border-top: solid 1px #CCC;
+  border-bottom: solid 1px #CCC;
+  -webkit-transition-property: top, bottom;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+  
+  -moz-transition-property: top, bottom;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-timing-function: ease-in-out;
+  
+  transition-property: top, bottom;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  
+}
+#nytg-fluidFooter{
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom: 0;
+  height: 30px;
+  -webkit-transition: bottom 0.3s ease-in-out;
+  -moz-transition: bottom 0.3s ease-in-out;
+  transition: bottom 0.3s ease-in-out;
+}
+
+#nytg-controlPane {
+    position: absolute;
+    width: 267px;
+    top: 0px;
+    bottom: 0px;
+    border-right: solid 1px #CCC;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transition-property: top, bottom, left;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-in-out;
+    
+    -moz-transition-property: top, bottom, left;
+    -moz-transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in-out;
+    
+    transition-property: top, bottom, left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+
+
+#nytg-mapHeader {
+    position: absolute;
+    left:280px;
+    right:0px;
+    height: 50px;
+    top:12px;
+    -webkit-transition-property: top, bottom, left;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-in-out;
+    
+    -moz-transition-property: top, bottom, left;
+    -moz-transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in-out;
+    
+    transition-property: top, bottom, left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    z-index: 100;
+}
+
+#nytg-mapContainer {
+    position: absolute;
+    left:280px;
+    bottom:12px;
+    right:2px;
+    top:44px;
+    -webkit-transition-property: top, bottom, left;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-in-out;
+    
+    -moz-transition-property: top, bottom, left;
+    -moz-transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in-out;
+    
+    transition-property: top, bottom, left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+/*HEADER*/
+
+#nytg-nytimesLogo{
+  position: relative;
+  top: 5px;
+  left: 0;
+}
+
+#nytg-sectionLink {
+  position: relative;
+  font-weight: bold;
+  font-size: 15px;
+/*  text-transform: uppercase;*/
+  margin: 0 0 0 6px;
+  padding: 0 0 0 8px;
+  border-left: solid 1px #CCC;
+  color: black;
+}
+
+/*Top Shelf*/
+.nytg-horizontalLine {
+  clear: both;
+  margin: 8px 0 0 0;
+  border-bottom: solid 1px #AAA;
+}
+#nytg-fluidTopShelf{
+  line-height: 12px;
+}
+
+#nytg-fluidTopShelf li{
+  float: left;
+  padding: 6px 7px 3px;
+  border-left: solid 1px #CCC;
+}
+
+#nytg-fluidTopShelf li.first {
+  padding-left: 0px;
+  border: none;
+}
+#nytg-fluidTopShelf li.nytLogo {
+  padding-top: 0px;
+}
+/*
+#nytg-mainTabs {
+  margin: 0 0 0 0px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+#nytg-memberTools {
+  float: right;
+  font-size: 12px;
+  margin: 0 0 4px;
+}*/
+
+
+
+
+
+/*Headlines*/
+
+
+
+h1 {
+  margin: 0 0 7px 0px;
+  font-size: 23px;
+  line-height: 26px;
+  font-family: Georgia;
+  font-weight: normal;
+}
+
+#nytg-fluidHeader h2 {
+  margin: 0 0 5px 0px;
+  font-family: Georgia;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 18px;
+}
+
+
+/*Related Article*/
+#nytg-relatedArticle{
+  float: right;
+  border-left: solid 1px #CCC;
+  padding: 0 0 0 12px;
+  
+}
+#nytg-relatedArticle img {
+  margin: 0 12px 0 0;
+  float: left;
+  display: none;
+}
+#nytg-relatedArticle p.nytg-sectionHead {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #666;
+  margin: 0 0 4px;
+}
+#nytg-relatedArticle a {
+  font-family: Georgia;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+#nytg-relatedArticle div.nytg-relatedDetails {
+  float: left;
+  width: 200px;
+}
+
+
+/*BODY*/
+#nytg-borderWrapper {
+  background-color: #F0F4F5;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+  background: #FFF url(satellite_bg.png);
+}
+
+
+/*FOOTER*/
+
+#nytg-fluidFooter p.nytg-sectionHead{
+  font-size: 10px;
+}
+
+/*Share Tools*/
+#nytg-shareTools{
+  width: 200px;
+/*  border-left: solid 1px #CCC;*/
+  padding: 0 0 0 12px;
+  float: right;
+  text-transform: uppercase;
+/*  line-height: 20px;*/
+}
+
+#nytg-shareTools a {
+  float: left;
+  border-left: solid 1px #CCC;
+  padding: 2px 0 2px 28px;
+  margin: 0 0 0 8px;
+}
+
+#nytg-shareTools li.first a {
+  border-left: none;
+  margin-left: 0px;
+  padding-left: 20px;
+  background-position: left center;
+}
+
+#nytg-shareTwitter {
+  background: #FFF url(http://graphics8.nytimes.com/projects/images/twitter-icon.png) no-repeat 8px center;
+}
+
+#nytg-shareFacebook {
+  background: #FFF url(http://graphics8.nytimes.com/projects/images/facebook-icon.png) no-repeat 8px center;
+}
+
+/*http://graphics8.nytimes.com/projects/images/twitter-icon.png*/
+/*http://graphics8.nytimes.com/projects/images/facebook-icon.png*/
+
+#nytg-fluidFooter p{
+  font-size: 11px;
+  line-height: 14px;
+  color: #666;
+}
+
+#nytg-publishDate{
+    float: left;
+  margin: 0 0 6px 0px;
+  color: #666;
+  font-size: 11px;
+}
+
+#nytg-credits{
+  float: left;
+  border-left: solid 1px #CCC;
+    margin: 0 0 0 8px;
+    padding: 0 0 0 8px;
+}
+#nytg-sources{
+  border-left: solid 1px #CCC;
+  margin: 0 0 0 8px;
+  padding: 0 0 0 8px;
+  float: left;
+}
+#nytg-notes{
+  font-style: italic;
+  color: #666;
+}

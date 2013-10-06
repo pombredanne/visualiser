@@ -1,0 +1,20 @@
+zoomable treemap
+http://bost.ocks.org/mike/treemap/
+http://www.nytimes.com/packages/html/newsgraphics/2011/0119-budget/
+170KB data
+http://philogb.github.io/jit/static/v20/Jit/Examples/Treemap/example1.html
+http://budget.brettmandel.com/cat.html
+
+load additional data
+http://stackoverflow.com/questions/17323479/d3-js-update-treemap-dynamicly
+http://stackoverflow.com/questions/10520280/does-the-d3-treemap-layout-get-cached-when-a-root-node-is-passed-to-it/10520641#10520641
+http://www.jeromecukier.net/blog/2012/04/19/treemaps-in-tableau-can-be-done/
+
+crossfilter not to be used with hierarchical data
+https://github.com/NickQiZhu/dc.js/issues/129
+
+
+nest data from csv
+http://bl.ocks.org/jarobertson/1446865
+http://stackoverflow.com/questions/17416186/d3-nest-key-and-values-conversion-to-name-and-children
+

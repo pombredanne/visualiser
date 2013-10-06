@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- </head><body><header>
+  <aside>August 15, 2013</aside>
+</header>
+
+<h1>Treemap (d3 / DIV)</h1>
+ -->
+<p id="chart">
+
+<style>
+ 
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*  margin: auto;
+  position: relative;
+  width: 960px;
+  height: 700px;
+*/
+  width: 100%;
+  height: 100%;
+}
+ 
+/*form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}*/
+ 
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
+}
+ 
+</style>
+<!-- <form>
+  <label><input type="radio" name="mode" value="size" checked> Size</label>
+  <label><input type="radio" name="mode" value="count"> Count</label>
+</form>
+ --><!--div id="zoomArea" style="width=1000px; height=700px;">
+   <div id="nytg-treeMap">
+</div-->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="lib.js" type="text/javascript" charset="utf-8"></script>
+<script src="modernizr-1.6.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="ZoomWindow.js" type="text/javascript" charset="utf-8"></script>
+  
+<script>
+// NYTG.z = new NYTG.ZoomWindow("nytg-treeMap", NYTG.tm);
+
+ // var margin = {top: 8, right: 1, bottom: 2, left: 1},
+ var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = 100 - margin.left - margin.right,
+    height = 100 - margin.top - margin.bottom;
+ 
+// var color = d3.scale.category20c();
+//color = d3.scale.linear().domain([1,length]).range(['red', 'blue']);
+// adapted from the visualizer color function
+color = d3.scale.linear().domain([0,250]).range(["rgb(0, 255, 50)", "rgb(255, 0, 50)"]);
+// color = d3.scale.linear().domain([1,250]).range(['green', 'red']);
+
+var treemap = d3.layout.treemap()
+    .size([width, height])
+    .sticky(true)
+    .value(function(d) { return d.sloc; });
+ 
+var div = d3.select("body").append("div")
+    .attr("id", "nytg-treeMap")
+    .style("position", "relative")
+    .style("width", (width + margin.left + margin.right) + "%")
+    .style("height", (height + margin.top + margin.bottom) + "%")
+    .style("left", margin.left + "%")
+    .style("top", margin.top + "%");
+
+NYTG.z = new NYTG.ZoomWindow("nytg-treeMap");
+
+d3.csv("metrics_full.csv", function(data) {
+  function level(nodes) {
+    return d3.nest()
+      .key(function(d) { 
+        if (d.name.indexOf('/') === -1) return d.name;
+        else return d.name.substr(0, d.name.indexOf('/')); 
+      })
+      .rollup(function(v) {
+          // leaf
+          if (v.length === 1 && v[0].name.indexOf('/') === -1) {
+            return v[0];
+          }
+          // node
+          v.map(function(d) { d.name = d.name.substring(d.name.indexOf('/')+1); return d; });
+          return {'children': level(v)};
+      })
+      .entries(nodes)
+      .map(function(d) { 
+        d.values['name'] = d.key;
+        return d.values;
+      });
+  };
+
+  data.map(function(d) { d.name = d.filename; return d; }); // keep original filename
+  var root = {'name': 'firefox', 'children': level(data)};
+  console.log('root: ' + JSON.stringify(root));
+
+  var node = div.datum(root).selectAll(".node")
+      .data(treemap.nodes)
+    .enter().append("div")
+      .attr("class", "node")
+      .attr("title", function(d) { return d.filename + "; sloc " + d.sloc + "; mccabe " + d.mccabe ; })
+      .call(position)
+      .style("background", function(d) { return d.children ? null: color(parseInt(d.mccabe)); })
+      .text(function(d) { return d.children ? null : d.name; });
+ 
+  d3.selectAll("input").on("change", function change() {
+    var value = this.value === "count"
+        ? function() { return 1; }
+        : function(d) { return parseInt(d.sloc); };
+ 
+    node
+        .data(treemap.value(value).nodes)
+      .transition()
+        .duration(1500)
+        .call(position);
+  });
+});
+ 
+function position() {
+  this.style("left", function(d) { return d.x + "%"; })
+      .style("top", function(d) { return d.y + "%"; })
+      .style("width", function(d) { return Math.max(0, d.dx) + "%"; })
+      .style("height", function(d) { return Math.max(0, d.dy) + "%"; });
+}
+ 
+</script>
